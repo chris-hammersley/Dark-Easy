@@ -1,0 +1,51 @@
+<html lang=en>
+<meta charset=utf-8>
+<head>
+    <title>More About The Author Of The Dark Easy by Michael Crame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" media="all" href="custom.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="dnd.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+    <body>
+        <script>
+            jQuery('body').css('display','none');
+            jQuery(document).ready(function() {
+                jQuery('body').fadeIn();
+                jQuery('a').on('click',function(event){
+                    var thetarget = this.getAttribute('target')
+                    if (thetarget != "_blank"){         
+                        var thehref = this.getAttribute('href')
+                        event.preventDefault();
+                        jQuery('body').fadeOut('slow', function(){
+                            //alert(thehref)
+                            window.location = thehref;                 
+                        });
+                    }
+                });
+            });
+            setTimeout(function(){
+                jQuery('body').fadeIn();
+            },2000)
+        </script>
+        <div class="container2">
+        <div class="content"><img src="images/7-about.png"></div>
+        <div id="popup"><iframe width="540" height="305" src="https://972540ba.sibforms.com/serve/MUIFAG-poHHtjUIPUXKemxFZGbMWqa2ilMEkJgMk9gSz9SRHC4Dtq4iVKYXUjYZ6Sgri3-ZHbRUG_H6pyI2gYJ4uYoDqLpNArcrFYed-zzVivFAvLT6guIWigd5pmA4M7A6cedBSVOT8ierV3Ks_iPCLxjatN17GiqXg5VuHmQp5y3hVtkcK2sd7cTjr7-jCiY8Lvw2ZAXbHuFfm" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe></div>
+        </div>
+        <button class="btn" id="button1">Join the ARC</button>
+        <script>
+        $(document).ready(function() {
+          $(".btn").click(function() {
+            $("#popup").show();
+          });
+        });
+        </script>
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              window.setTimeout(function() {
+                document.body.className = '';
+              }, 330);
+            });
+          </script>
+    </body>
+</html>

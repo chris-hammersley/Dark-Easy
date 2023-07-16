@@ -1,0 +1,46 @@
+<html lang=en>
+<meta charset=utf-8>
+<head>
+    <title>The Dark Easy by Michael Crame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" media="all" href="custom.css" />
+    <script src="dnd.js" type="text/javascript" charset="UTF-8"></script>
+          <style>
+          body {
+            opacity: 1;
+            transition-duration: 2s;
+            transition-property: opacity;
+          }
+
+          body.fade {
+            opacity: 0;
+          }
+          </style>
+</head>
+    <body>
+        <script>
+            document.body.className = 'fade';
+        </script>
+        <div class="headline" style="margin-top:10%"><h1>Do you dare upset the balance?</h1></div>
+        <div class="container">
+          <div draggable="true" class="box"><img src="images/demons.png" height="330px" width="220px">
+            <br/>
+            <hr class="underline-red" style="height:1px;width:50%;border-top:1px solid #B35757" /></div>
+          <div draggable="true" class="box"><img src="images/angels.png" height="330px" width="220px">
+            <br/>
+            <hr class="underline-red" style="height:1px;width:50%;border-top:1px solid #B35757" /></div>
+          <div class="ampersand glow">&amp;</div>
+          <div draggable="false"><img src="images/guns.png" height="330px" width="220px">
+            <br/>
+            <hr class="underline-green" style="height:1px;width:50%;border-top:1px solid #8EF2C1" />
+          </div>
+        </div>
+          <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      window.setTimeout(function() {
+        document.body.className = '';
+      }, 230);
+    });
+  </script>
+    </body>
+</html>
