@@ -38,7 +38,8 @@ h1{
 
 .container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+//    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 50px;
 }
 
@@ -49,7 +50,8 @@ h1{
 .container3 {
     display: grid;
     text-align: center;
-    grid-template-columns: auto auto auto;
+//    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-content:center;
     gap:10px;
     position: relative;
