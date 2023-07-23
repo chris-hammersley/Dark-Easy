@@ -19,11 +19,19 @@ div{
 }
 
 h1,h2,h3,h4{
-    color:white;
+    color:#fff;
 }
 
 h1{
     font-size:5em;
+}
+
+.release-dates{
+    color:#fff;
+    font-size:1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom:10px;
 }
 
 .headline{
@@ -45,6 +53,12 @@ h1{
 
 .container2 {
     display:grid;
+    align-contents:center;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: auto auto;
+    gap:20px;
+    position: relative;
+    margin-top:100px;
 }
 
 .container3 {
@@ -76,6 +90,10 @@ h1{
     position: relative;
 }
 
+.container6 {
+    display:grid;
+}
+
 main,aside{
     height: 100%;
     display: grid;
@@ -98,6 +116,13 @@ section{
     display: grid;
     align-self: center;
     justify-self: center;
+}
+
+.badge {
+    position:absolute;
+    display: grid;
+    align-self: center;
+    justify-self: right;
 }
 
 .upper{
