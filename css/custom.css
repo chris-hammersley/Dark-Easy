@@ -26,6 +26,26 @@ h1{
     font-size:5em;
 }
 
+.button {
+  padding: 10px 20px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #35b9dd;
+  border: none;
+  border-radius: 10px;
+}
+
+.button:hover {background-color: #3acdf2}
+
+.button:active {
+  background-color: #3acdf2;
+//  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .release-dates{
     color:#fff;
     font-size:1.5em;
@@ -83,15 +103,19 @@ h1{
 
 .container5 {
     display: grid;
-    text-align: left;
+//    place-self:right;
     align-items:center;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap:20px;
     position: relative;
+    min-height:100vh;
 }
 
 .container6 {
     display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    min-height:100vh;
+//    position: relative;
 }
 
 main,aside{
@@ -121,8 +145,9 @@ section{
 .badge {
     position:absolute;
     display: grid;
-    align-self: center;
+    align-self: top;
     justify-self: right;
+    margin-top:22px;
 }
 
 .upper{
@@ -131,7 +156,8 @@ section{
 }
 
 .content, .overlay{
-  grid-area: 1 / 1;
+    place-self:center;
+    margin:auto;
 }
 
 #popup{
@@ -205,6 +231,35 @@ section{
     box-shadow: 0 0 10px 10px #aef4af;
   }
 }
+
+.invite {
+    width: 600px;
+    height:600px;
+
+    will-change: filter;
+  
+    transition: filter 1s ease-out;
+}
+
+.invite:hover{
+    /* offset-x offset-y blur-radius color */
+    -webkit-filter: drop-shadow(12px 12px 50px rgba(130, 208, 229, 0.5));
+     filter: drop-shadow(12px 12px 50px rgba(130, 208, 229, 0.5));    
+}
+
+/*.glowing {
+    border-radius: 5%;
+    animation: glow-image 3s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow-image {
+  from {
+    drop-shadow: 0 0 10px -10px #779097;
+  }
+  to {
+    drop-shadow: 0 0 10px 10px #779097;
+  }
+}*/
 
 @-webkit-keyframes fadeout {
     0% {opacity:1;}
