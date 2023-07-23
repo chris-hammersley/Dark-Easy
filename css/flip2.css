@@ -1,11 +1,7 @@
 .c1 {
-    color:white; 
-    background-color:black;
     margin:10px;
 }
 .c2 {
-    color:white; 
-    background-color:black;
     margin:10px;
 }
 
@@ -13,7 +9,6 @@
 .flip-container {
     height:100%;
     perspective: 1000px;
-//    border: 1px dashed #a9a9a9;
 }
   /* flip the pane when has the backed */
 .flip-container.backed .flipper {
@@ -64,4 +59,5 @@
     flex-wrap: wrap;
     justify-content: center;
     align-content:center;
+    margin-top:40px;
 }
