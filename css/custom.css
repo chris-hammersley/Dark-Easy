@@ -1,6 +1,28 @@
+/* Typography imported from Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800;900&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gothic A1', sans-serif;
+}
+
+p, a {
+  font-family: 'Gothic A1', sans-serif;
+  font-size:1.9em;
+  color:#F676C6;
+}
+
+h1,h2,h3,h4{
+    color:#fff;
+}
+
+h1{
+    font-size:3em;
+    font-weight: 900;
+}
+
 html {
     background-color:#000;
-//    height:100%;
+/*    height:100%;*/
 }
 
 body {
@@ -18,12 +40,244 @@ div{
     display:grid;
 }
 
-h1,h2,h3,h4{
-    color:#fff;
+.text {
+    color: var(--white);
+    position:absolute;
+    display: grid;
+    align-self: center;
+    justify-self: center;
 }
 
-h1{
-    font-size:5em;
+.box2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+}
+
+/* START Intro Page */
+.container {
+    display: grid;
+/*    grid-template-columns: repeat(4, 1fr);*/
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 50px;
+}
+
+.box{
+    cursor:move;
+}
+
+.underline-green{
+/*    color:#8EF2C1; */
+    text-align: center;
+    box-shadow: 0px 0px 3px 3px #8EF2C1;
+}
+
+.underline-red{
+/*    color:#B35757; */
+    text-align: center;
+    box-shadow: 0px 0px 3px 3px #B35757;
+}
+
+.ampersand{
+    font-size:180px;
+    font-weight:900;
+    font-family: cursive;
+    font-stretch:ultra-condensed;
+    margin-top:20%;
+    color:#8EF2C1;
+    text-align: center;
+}
+/* END Intro Page */
+
+/* START Trilogy Page */
+.container2 {
+    display:grid;
+    align-contents:center;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: auto auto;
+    gap:20px;
+    position: relative;
+    margin-top:100px;
+}
+
+.release-dates{
+    font-family: 'Gothic A1', sans-serif;
+    color:#fff;
+    font-size:1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom:10px;
+}
+/* END Trilogy Page */
+
+/* START Welcome Page */
+.container3 {
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-content:center;
+    gap:10px;
+    position: relative;
+}
+
+cards{
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    align-self:center;  
+}
+/* END Welcome Page */
+
+/* START Cover Page */
+.container4 {
+    display: grid;
+    text-align: center;
+    align-items:center;
+/*    grid-template-columns: 1fr auto;*/
+    grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+    gap:100px;
+    position: relative;
+}
+
+main{
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    align-self:center;
+    margin:0 20 0 20;
+}
+
+aside2{
+    display:grid;
+    height:100vh;
+    align-items: center;
+    justify-content: center;
+    text-align:center;  
+    margin:0 20 0 20;  
+}
+
+.badge {
+    position:absolute;
+    display: grid;
+    align-self: top;
+    justify-self: right;
+    margin-top:120px;
+}
+
+.uppercase{
+    font-size:1.5em;
+    text-transform: uppercase;
+}
+/* END Cover Page */
+
+/* START About Page */
+.container5 {
+  display: grid; 
+  grid-auto-flow: column dense; 
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+/*  grid-template-rows: 80px auto auto;*/
+  grid-template-rows: auto;
+  gap: 100px 50px; 
+  grid-template-areas: 
+    "Header Header Header"
+    "Bio Bio Bio-Pic"
+    "Popup Popup Popup"; 
+  justify-content: center; 
+  align-content: start; 
+  justify-items: center; 
+  align-items: start; 
+}
+
+.Header {
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr;
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "."; 
+  justify-items: center; 
+  align-items: start; 
+  grid-area: Header; 
+  height: 80px;
+  order:1;
+}
+
+.upper{
+    text-transform: uppercase;
+    color:white;
+}
+
+.Bio {
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+    "."
+    "."
+    "."; 
+  justify-content: center; 
+  align-content: center; 
+  justify-items: center; 
+/*  align-items: center; */
+  justify-self: center; 
+  align-self: start;
+  grid-area: Bio;
+/*  height:80vh;*/
+  order:1;
+}
+
+.Bio-Pic {
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr; 
+  grid-template-areas: 
+    "."; 
+  justify-content: start; 
+  align-content: start; 
+  justify-items: start; 
+  justify-self: start; 
+  align-self: center; 
+  grid-area: Bio-Pic;
+  order:1;
+}
+
+.Popup {
+  grid-area: Popup;
+  position:relative;
+  top: -85vh;
+  order:2;
+}
+/* END About Page */
+
+/* START Invitation Page */
+.container6 {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    min-height:100vh;
+}
+
+.content{
+    place-self:center;
+    margin:auto;
+}
+
+.invite {
+    width: 600px;
+    height:600px;
+    will-change: filter;
+    transition: filter 1s ease-out;
+}
+
+.invite:hover{
+    -webkit-filter: drop-shadow(12px 12px 50px rgba(130, 208, 229, 0.5));
+     filter: drop-shadow(12px 12px 50px rgba(130, 208, 229, 0.5));    
 }
 
 .button {
@@ -38,166 +292,20 @@ h1{
   border-radius: 10px;
 }
 
-.button:hover {background-color: #3acdf2}
+.button:hover {
+  background-color:#3acdf2;
+}
 
 .button:active {
   background-color: #3acdf2;
-//  box-shadow: 0 5px #666;
+/*  box-shadow: 0 5px #666;*/
   transform: translateY(4px);
-}
-
-.release-dates{
-    color:#fff;
-    font-size:1.5em;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding-bottom:10px;
-}
-
-.headline{
-    color:white;
-    text-align: center;
-    font-family: serif;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 20px;
-    padding-bottom: 80px;
-}
-
-.container {
-    display: grid;
-//    grid-template-columns: repeat(4, 1fr);
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 50px;
-}
-
-.container2 {
-    display:grid;
-    align-contents:center;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-template-rows: auto auto;
-    gap:20px;
-    position: relative;
-    margin-top:100px;
-}
-
-.container3 {
-    display: grid;
-    text-align: center;
-//    grid-template-columns: auto auto auto;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    align-content:center;
-    gap:10px;
-    position: relative;
-}
-
-.container4 {
-    display: grid;
-    text-align: center;
-    align-items:center;
-//    grid-template-columns: 1fr auto;
-    grid-template-columns: repeat(auto-fit, minmax(400px, auto));
-    gap:100px;
-    position: relative;
-}
-
-.container5 {
-    display: grid;
-//    place-self:right;
-    align-items:center;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-gap:20px;
-    position: relative;
-    min-height:100vh;
-}
-
-.container6 {
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    min-height:100vh;
-//    position: relative;
-}
-
-main,aside{
-    height: 100%;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    text-align:center;
-}
-
-section{
-    height: 100%;
-    display: grid;
-    align-items: center;
-//    justify-content: center;
-//    text-align:center;
-}
-
-.text {
-    color: var(--white);
-    position:absolute;
-    display: grid;
-    align-self: center;
-    justify-self: center;
-}
-
-.badge {
-    position:absolute;
-    display: grid;
-    align-self: top;
-    justify-self: right;
-    margin-top:22px;
-}
-
-.upper{
-    font-size: 2em;
-    text-transform: uppercase;
-}
-
-.content, .overlay{
-    place-self:center;
-    margin:auto;
 }
 
 #popup{
     display:none;
 }
-
-.box{
-    cursor:move;
-}
-
-.box2 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.7;
-}
-
-.underline-green{
-//    color:#8EF2C1;
-    text-align: center;
-    box-shadow: 0px 0px 3px 3px #8EF2C1;
-}
-
-.underline-red{
-//    color:#B35757;
-    text-align: center;
-    box-shadow: 0px 0px 3px 3px #B35757;
-}
-
-.ampersand{
-    font-size:180px;
-    font-weight:900;
-    font-family: cursive;
-    font-stretch:ultra-condensed;
-    margin-top:20%;
-    color:#8EF2C1;
-    text-align: center;
-}
+/* END About Page */
 
 .glow {
   font-size: 180px;
@@ -232,35 +340,6 @@ section{
   }
 }
 
-.invite {
-    width: 600px;
-    height:600px;
-
-    will-change: filter;
-  
-    transition: filter 1s ease-out;
-}
-
-.invite:hover{
-    /* offset-x offset-y blur-radius color */
-    -webkit-filter: drop-shadow(12px 12px 50px rgba(130, 208, 229, 0.5));
-     filter: drop-shadow(12px 12px 50px rgba(130, 208, 229, 0.5));    
-}
-
-/*.glowing {
-    border-radius: 5%;
-    animation: glow-image 3s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes glow-image {
-  from {
-    drop-shadow: 0 0 10px -10px #779097;
-  }
-  to {
-    drop-shadow: 0 0 10px 10px #779097;
-  }
-}*/
-
 @-webkit-keyframes fadeout {
     0% {opacity:1;}
     100% {opacity:0;}
@@ -269,6 +348,7 @@ section{
     0% {opacity:1;}
     100% {opacity:0;}
 }
+
 .fadeout {
   opacity:0;
   -moz-animation   : fadeout 5s;
