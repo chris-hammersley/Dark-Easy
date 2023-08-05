@@ -25,8 +25,8 @@ var DragDropTouch;
             get: function () {
                 return this._dropEffect;
             },
-            set: function (value) {
-                this._dropEffect = value;
+            set: function (move) {
+                this._dropEffect = move;
             },
             enumerable: true,
             configurable: true
@@ -40,8 +40,8 @@ var DragDropTouch;
             get: function () {
                 return this._effectAllowed;
             },
-            set: function (value) {
-                this._effectAllowed = value;
+            set: function (move) {
+                this._effectAllowed = move;
             },
             enumerable: true,
             configurable: true
@@ -67,7 +67,7 @@ var DragDropTouch;
          */
         DataTransfer.prototype.clearData = function (type) {
             if (type != null) {
-                delete this._data[type];
+                delete this._data["text/html"];
             }
             else {
                 this._data = null;
