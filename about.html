@@ -8,26 +8,6 @@
     <script src="js/dnd.js" type="text/javascript" charset="UTF-8"></script>
 </head>
     <body>
-        <script>
-            jQuery('body').css('display','none');
-            jQuery(document).ready(function() {
-                jQuery('body').fadeIn();
-                jQuery('a').on('click',function(event){
-                    var thetarget = this.getAttribute('target')
-                    if (thetarget != "_blank"){         
-                        var thehref = this.getAttribute('href')
-                        event.preventDefault();
-                        jQuery('body').fadeOut('slow', function(){
-                            //alert(thehref)
-                            window.location = thehref;                 
-                        });
-                    }
-                });
-            });
-            setTimeout(function(){
-                jQuery('body').fadeIn();
-            },2000)
-        </script>
         <div class="container5">
           <div class="Header">
             <h1 class="upper">Your Author</h1>
@@ -39,12 +19,21 @@
             "The Dark Easy" is his Award-Winning Novel and the beginning of his urban fantasy series.
           </div>
           <div class="Bio-Pic">
-            <img class="btn" src="images/michael-crame-author-dark-easy.jpg" width="400px">
+            <a class="ml-onclick-form" href="javascript:void(0)" onclick="ml('show', 'kTXTFA', true)"><img src="images/michael-crame-author-dark-easy.jpg" width="300px"></a>
           </div>
-          <div id="popup" class="Popup">
+          <!--div id="popup" class="Popup">
             <iframe width="540" height="600" src="https://972540ba.sibforms.com/serve/MUIFAPHrfL8i5a6hs0TyHKeDoh9tT5e6Rn4vPrOlKEPUPXb_etbQyQIAwNarD_RhJnIArZy8R8_pY8dje7nWXW2S2betPPs6EIWsYKzawO-kU3IS72zftncz1RAmdJeYc5czsvGSHtIO0_HvuUjjhTOQhXCwI0phIKLLePsotTeKWlhA89wZLqYli5L-CHuKjOxAf5zvB_tK02T5" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
-          </div>
+          </div-->
         </div>
+      <!-- MailerLite Universal -->
+        <script>
+            (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+            .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+            n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+            (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+            ml('account', '532780');
+        </script>
+      <!-- End MailerLite Universal -->
         <script>
         $(document).ready(function() {
           $(".btn").click(function() {

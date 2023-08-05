@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" media="all" href="css/custom.css" />
     <script src="js/dnd.js" type="text/javascript" charset="UTF-8"></script>
-    <script src="js/DragDropTouch.js"></script>
           <style>
           body {
             opacity: 1;
@@ -22,25 +21,55 @@
         <script>
             document.body.className = 'fade';
         </script>
-        <div class="container" style="margin-top:250px">
-          <div draggable="true" class="box"><img src="images/demons.png" height="330px" width="220px">
+        <div class="container">
+          <div draggable="true" class="box"><img id="img1" src="images/demons.png" onclick = "magikTrick()" height="330px" width="220px">
             <br/>
-            <hr class="underline-red" style="height:1px;width:50%;border-top:1px solid #B35757" /></div>
-          <div draggable="true" class="box"><img src="images/angels.png" height="330px" width="220px">
+            <hr id="approval1" class="underline-red" style="height:1px;width:50%;border-top:1px solid #B35757" />
+          </div>
+          <div draggable="true" class="box"><img id="img2" src="images/angels.png" onclick = "magikTrick()" height="330px" width="220px">
             <br/>
-            <hr class="underline-red" style="height:1px;width:50%;border-top:1px solid #B35757" /></div>
+            <hr id="approval2" class="underline-red" style="height:1px;width:50%;border-top:1px solid #B35757" />
+          </div>
           <div class="ampersand glow">&amp;</div>
-          <div draggable="false"><img src="images/guns.png" height="330px" width="220px">
+          <div draggable="false" style="pointer-events:none"><img src="images/guns.png" height="330px" width="220px">
             <br/>
             <hr class="underline-green" style="height:1px;width:50%;border-top:1px solid #8EF2C1" />
           </div>
         </div>
+          <script>     
+            function magikTrick(){
+              let get1 = document.getElementById("img1");
+              let get2 = document.getElementById("img2");
+              let trick = get1.src;
+
+              // perform magic trick
+              get1.src = get2.src;
+              get2.src = trick;
+
+              // change underlines to green
+              document.getElementById("approval1").className = "underline-green";
+              document.getElementById("approval2").className = "underline-green";
+
+              // disable onclick
+              document.getElementById("img1").onclick=null;
+              document.getElementById("img2").onclick=null;
+
+              // set delay before loading next page
+              var delayInMilliseconds = 2000; // 2 seconds
+    
+              setTimeout(function() {
+                document.body.classList.add('fadeout'); // add the fadeout class to body
+                const tab = window.open('welcome.html', "_self"); // open next page
+                }, delayInMilliseconds);
+
+              }
+          </script>
           <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      window.setTimeout(function() {
-        document.body.className = '';
-      }, 230);
-    });
-  </script>
+              document.addEventListener("DOMContentLoaded", () => {
+                window.setTimeout(function() {
+                  document.body.className = '';
+                }, 230);
+              });
+          </script>
     </body>
 </html>

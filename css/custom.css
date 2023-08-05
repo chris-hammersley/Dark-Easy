@@ -60,9 +60,13 @@ div{
 /* START Intro Page */
 .container {
     display: grid;
-/*    grid-template-columns: repeat(4, 1fr);*/
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 50px;
+    height:100vh;
+  justify-content: center; 
+/*  align-content: end; */
+  justify-items: center; 
+  align-items: center; 
 }
 
 .box{
@@ -86,7 +90,7 @@ div{
     font-weight:900;
     font-family: cursive;
     font-stretch:ultra-condensed;
-    margin-top:20%;
+/*    margin-top:20%; */
     color:#8EF2C1;
     text-align: center;
 }
