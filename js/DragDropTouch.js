@@ -14,7 +14,7 @@ var DragDropTouch;
     var DataTransfer = (function () {
         function DataTransfer() {
             this._dropEffect = 'move';
-            this._effectAllowed = 'all';
+            this._effectAllowed = 'move';
             this._data = {};
         }
         Object.defineProperty(DataTransfer.prototype, "dropEffect", {
@@ -25,7 +25,7 @@ var DragDropTouch;
             get: function () {
                 return this._dropEffect;
             },
-            set: function (move) {
+            set: function (value) {
                 this._dropEffect = move;
             },
             enumerable: true,
@@ -40,7 +40,7 @@ var DragDropTouch;
             get: function () {
                 return this._effectAllowed;
             },
-            set: function (move) {
+            set: function (value) {
                 this._effectAllowed = move;
             },
             enumerable: true,
@@ -80,7 +80,7 @@ var DragDropTouch;
          * @param type Type of data to retrieve.
          */
         DataTransfer.prototype.getData = function (type) {
-            return this._data[type] || '';
+            return this._data["text/html"] || '';
         };
         /**
          * Set the data for a given type.
@@ -92,7 +92,7 @@ var DragDropTouch;
          * @param value Data to add.
          */
         DataTransfer.prototype.setData = function (type, value) {
-            this._data[type] = value;
+            this._data["text/html"] = "text/html";
         };
         /**
          * Set the image to be used for dragging if a custom one is desired.
