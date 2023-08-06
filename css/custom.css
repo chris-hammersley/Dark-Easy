@@ -96,27 +96,6 @@ div{
 }
 /* END Intro Page */
 
-/* START Trilogy Page */
-.container2 {
-    display:grid;
-    align-contents:center;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-template-rows: auto auto;
-    gap:20px;
-    position: relative;
-    margin-top:100px;
-}
-
-.release-dates{
-    font-family: 'Gothic A1', sans-serif;
-    color:#fff;
-    font-size:1.5em;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding-bottom:10px;
-}
-/* END Trilogy Page */
-
 /* START Welcome Page */
 .container3 {
     display: grid;
@@ -181,84 +160,28 @@ aside2{
 }
 /* END Cover Page */
 
-/* START About Page */
-.container5 {
-  display: grid; 
-  grid-auto-flow: column dense; 
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-/*  grid-template-rows: 80px auto auto;*/
-  grid-template-rows: auto;
-  gap: 100px 50px; 
-  grid-template-areas: 
-    "Header Header Header"
-    "Bio Bio Bio-Pic"
-    "Popup Popup Popup"; 
-  justify-content: center; 
-  align-content: start; 
-  justify-items: center; 
-  align-items: start; 
+/* Character Page in flip2.css file */
+
+/* START Trilogy Page */
+.container2 {
+    display:grid;
+    align-contents:center;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: auto auto;
+    gap:20px;
+    position: relative;
+    margin-top:100px;
 }
 
-.Header {
-  display: grid; 
-  grid-template-columns: 1fr; 
-  grid-template-rows: 1fr;
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "."; 
-  justify-items: center; 
-  align-items: start; 
-  grid-area: Header; 
-  height: 80px;
-  order:1;
-}
-
-.upper{
+.release-dates{
+    font-family: 'Gothic A1', sans-serif;
+    color:#fff;
+    font-size:1.5em;
+    font-weight: 700;
     text-transform: uppercase;
-    color:white;
+    padding-bottom:10px;
 }
-
-.Bio {
-  display: grid; 
-  grid-template-columns: 1fr; 
-  grid-template-rows: 1fr;
-  grid-template-areas: 
-    "."
-    "."
-    "."; 
-  justify-content: center; 
-  align-content: center; 
-  justify-items: center; 
-/*  align-items: center; */
-  justify-self: center; 
-  align-self: start;
-  grid-area: Bio;
-/*  height:80vh;*/
-  order:1;
-}
-
-.Bio-Pic {
-  display: grid; 
-  grid-template-columns: 1fr; 
-  grid-template-rows: 1fr; 
-  grid-template-areas: 
-    "."; 
-  justify-content: start; 
-  align-content: start; 
-  justify-items: start; 
-  justify-self: start; 
-  align-self: center; 
-  grid-area: Bio-Pic;
-  order:1;
-}
-
-.Popup {
-  grid-area: Popup;
-  position:relative;
-  top: -85vh;
-  order:2;
-}
-/* END About Page */
+/* END Trilogy Page */
 
 /* START Invitation Page */
 .container6 {
@@ -308,6 +231,46 @@ aside2{
 
 #popup{
     display:none;
+}
+/* END Invitation Page */
+
+/* START About Page */
+.container7 {
+  display: grid;
+/*  width:80%;
+  height:700px;*/
+  grid-template-columns: minmax(400px, 80%) 1fr;
+  grid-template-rows: auto auto;
+  grid-auto-rows: 1fr;
+  justify-items: center;
+  text-align: center;
+/*  justify-content: center; */
+/*  align-content: center; // don't use */
+}
+
+@media (max-width: 1000px) { 
+  .item {
+    grid-column: span 2;
+  }
+  .upper{
+    font-size:1.5em;
+  }
+}
+
+.spanner {
+  grid-column: span 2;
+}
+
+.upper{
+    text-transform: uppercase;
+    color:white;
+}
+
+.Popup {
+  grid-area: Popup;
+  position:relative;
+  top: -85vh;
+  order:2;
 }
 /* END About Page */
 
