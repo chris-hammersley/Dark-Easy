@@ -123,12 +123,12 @@ cards{
     align-items:center;
 /*    grid-template-columns: 1fr auto;*/
     grid-template-columns: repeat(auto-fit, minmax(400px, auto));
-    gap:100px;
+/*    gap:100px;*/
     position: relative;
 }
 
 main{
-    height: 100vh;
+/*    height: 100vh;*/
     display: grid;
     align-items: center;
     justify-content: center;
