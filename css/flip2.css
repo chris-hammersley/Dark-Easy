@@ -5,6 +5,10 @@
     margin:10px;
 }
 
+.card-edge {
+    border-radius: 5%;
+}
+
 /* based on David Walsh Flipper */
 .flip-container {
     height:100%;
