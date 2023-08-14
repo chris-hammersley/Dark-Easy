@@ -3,21 +3,110 @@
 <head>
     <title>The Dark Easy by Michael Crame</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" media="all" href="css/custom.css" />
+    <link rel="stylesheet" media="all" href="css/menu.css" />
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800;900&display=swap');
+
+        h1, h2, h3, h4, h5, h6, a {
+          font-family: 'Gothic A1', sans-serif;
+        }
+
+        p {
+          font-family: 'Gothic A1', sans-serif;
+          font-size:1.5em;
+          color:#F676C6;
+          margin-bottom:50px;
+        }
+
+        p::first-letter {
+          font-size: 2rem;
+          font-weight: bold;
+          color: #f676c6;
+        }
+
+        h1,h2,h3,h4{
+            color:#fff;
+        }
+
+        h1{
+            font-size:3em;
+            font-weight: 900;
+            padding-top:40px;
+        }
+
+        html {
+            background-color:#000;
+        }
+
+        body {
+            background-color: #000;
+        }
+        .covertext{
+          font-family:'Gothic A1', sans-serif;
+          color:white;
+          font-size:1.4em;
+          margin:50px;
+          -webkit-transform: scale(1, 1.2);
+          -moz-transform: scale(1, 1.2);
+          -o-transform: scale(1, 1.2);
+          transform: scale(1, 1.2);
+        }
+        </style>
 </head>
 <body>
-    <h1>"Lagniappe"</h1>
-    <p>Lagniappe (lan-yap) - a Cajun-French inspired noun meaning “a little extra.” Often used to describe something good, it’s NOLA speak for receiving anything extra, or better yet, receiving something for free. To that end I’ll be giving away something “a little extra” to random people on the email list from time to time. So if you’re signed up, thank you! You’re automatically entered into future giveaways.</p>
+        <center><h1>"Lagniappe"</h1></center>
+        <p class="covertext">Lagniappe (lan-yap) - a Cajun-French inspired noun meaning “a little extra.” Often used to describe something good, it’s NOLA speak for receiving anything extra, or better yet, receiving something for free. To that end I’ll be giving away something “a little extra” to random people on the email list from time to time. So if you’re signed up, thank you! You’re automatically entered into future giveaways.</p>
 
-    <p>I love the above word and the custom it stands for. If you’ve visited New Orleans and spent any amount of time there, you've probably been the beneficiary of lagniappe. That extra heavy pour from the bartender at some obscure, tiny joint that only locals frequent far away from Bourbon Street? Lagniappe. You don’t even have to ask, it's just thrown in as a way of making you feel at home, among friends. The city and the locals are a welcoming place and people, and have been the source of inspiration for my many story ideas.</p>
+        <p class="covertext">I love the above word and the custom it stands for. If you’ve visited New Orleans and spent any amount of time there, you've probably been the beneficiary of lagniappe. That extra heavy pour from the bartender at some obscure, tiny joint that only locals frequent far away from Bourbon Street? Lagniappe. You don’t even have to ask, it's just thrown in as a way of making you feel at home, among friends. The city and the locals are a welcoming place and people, and have been the source of inspiration for my many story ideas.</p>
 
-    <p><i>The Dark Easy</i> is one of those ideas. The series has been restless in my imagination for over ten years until the characters finally figured out who they were and the story they wanted to tell in early 2021. In 2022 the unpublished novel won ScreenCraft’s <i>Cinematic Book Competition</i> and gave hope there was merit to the work. All there was left to do was give the readers a chance to visit this fantastical version of New Orleans and the occult library that runs like an undercurrent through the city the way the Mississippi River does: haunted, dark, and deep.</p>
+        <p class="covertext"><i>The Dark Easy</i> is one of those ideas. The series has been restless in my imagination for over ten years until the characters finally figured out who they were and the story they wanted to tell in early 2021. In 2022 the unpublished novel won <i>ScreenCraft’s Cinematic Book Competition</i> and gave hope there was merit to the work. All there was left to do was give the readers a chance to visit this fantastical version of New Orleans and the occult library that runs like an undercurrent through the city the way the Mississippi River does: haunted, dark, and deep.</p>
 
-    <p>I hope you become fans of the series and look forward to the books as they’re published. I hope to foster a sense of community, like you’re among friends sitting at a bar with me in the French Quarter, as I tell you these tall tales. Your experience matters to me. A writer has a responsibility to entertain you if they put themselves out there for <i>your</i> entertainment. After all, you’re giving me your money and attention and I want you to close the book and say: Damn, Mike. That was worth it.</p>
+        <p class="covertext">I hope you become fans of the series and look forward to the books as they’re published. I hope to foster a sense of community, like you’re among friends sitting at a bar with me in the French Quarter, as I tell you these tall tales. Your experience matters to me. A writer has a responsibility to entertain you if they put themselves out there for <i>your</i> entertainment. After all, you’re giving me your money and attention and I want you to close the book and say: Damn, Mike. That was worth it.</p>
 
-    <p>If that happens then I’ve done my job. If it doesn't, I’ll do better next time.</p>
+        <p class="covertext">If that happens then I’ve done my job. If it doesn't, I’ll do better next time.</p>
 
-    <p>Welcome to The Dark Easy.
-    </p>
+        <p class="covertext">Welcome to The Dark Easy.</p>
+            <!-- Start Nav Structure -->
+            <button class="cn-button glow-pic" id="cn-button">Deal</button>
+            <div class="cn-wrapper" id="cn-wrapper">
+                <ul>
+                    <li><a href="cover.html"><span>Cover</span></a></li>
+                    <li><a href="characters.html"><span>Players</span></a></li>
+                    <li><a href="trilogy.html"><span>Trilogy</span></a></li>
+                    <li><a href="invitation.html"><span>ARC</span></a></li>
+                    <li><a href="about.html"><span>About</span></a></li>
+                 </ul>
+            </div>
+            <!-- End of Nav Structure -->
 </body>
+        <script>
+        (function(){
+
+          var button = document.getElementById('cn-button'),
+            wrapper = document.getElementById('cn-wrapper');
+
+          //open and close menu when the button is clicked
+          var open = false;
+          button.addEventListener('click', handler, false);
+          button.addEventListener('focus', handler, false);
+
+          function handler(){
+            if(!open){
+              this.innerHTML = "Choose";
+              classie.add(wrapper, 'opened-nav');
+            }
+            else{
+              this.innerHTML = "Deal";
+            classie.remove(wrapper, 'opened-nav');
+            }
+            open = !open;
+          }
+          function closeWrapper(){
+            classie.remove(wrapper, 'opened-nav');
+          }
+
+        })();
+        </script>
+        <script src="js/polyfills.js"></script>
 </html>
