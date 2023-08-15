@@ -266,6 +266,9 @@ body {
     font-size: .9em;
     line-height: 4em;
   }
+  img{
+    float:none;
+  }
 }
 
 @media only screen and (max-width: 480px) {
