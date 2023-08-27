@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800;900&display=swap');
+
+body{
+    margin:20px;
+}
+
+h1, h2, h3, h4, h5, h6, a {
+  font-family: 'Gothic A1', sans-serif;
+}
+
+p {
+  font-family: 'Gothic A1', sans-serif;
+  font-size:1.5em;
+  color:#F676C6;
+  margin-bottom:60px;
+}
+
+p::first-letter {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f676c6;
+}
+
+h1,h2,h3,h4{
+    color:#fff;
+}
+
+h1{
+    font-size:3em;
+    font-weight: 900;
+    margin-top:40px;
+/*    margin-bottom:50px;*/
+}
+
+img {
+    display:flex;
+    float: left;
+    margin-left:50px;
+    margin-bottom:20px;
+    margin-right:20px;
+    margin-top:-20px;
+}
+
+html {
+    background-color:#000;
+}
+
+body {
+    background-color: #000;
+}
+.covertext{
+    color:white;
+    font-size:1.4em;
+    -webkit-transform: scale(1, 1.2);
+    -moz-transform: scale(1, 1.2);
+    -o-transform: scale(1, 1.2);
+    transform: scale(1, 1.2);
+}
+.covertext-final{
+    color:white;
+    font-size:1.4em;
+    -webkit-transform: scale(1, 1.2);
+    -moz-transform: scale(1, 1.2);
+    -o-transform: scale(1, 1.2);
+    transform: scale(1, 1.2);
+    margin-top:-20px;
+    padding-bottom:50px;
+}
+@media only screen and (max-width: 500px) {
+    p {
+        margin-top:110px;
+    }
+    img {
+    /*    display:none;*/
+    display:block;
+    float:bottom;
+    }
+    .covertext-final{
+        font-size:1.4em;
+        -webkit-transform: scale(1, 1.2);
+        -moz-transform: scale(1, 1.2);
+        -o-transform: scale(1, 1.2);
+        transform: scale(1, 1.2);
+        color:white;
+        padding-bottom:100px;
+    }
+}

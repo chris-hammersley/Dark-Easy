@@ -9,7 +9,7 @@ p, a {
   font-family: 'Gothic A1', sans-serif;
   font-size:1.9em;
   color:#F676C6;
-  margin-bottom:20px;
+/*  margin-bottom:20px;*/
 }
 
 p::first-letter {
@@ -32,6 +32,7 @@ html {
 }
 
 body {
+    background: #f676c6;
     background-color: #000;
 }
 
@@ -43,7 +44,7 @@ img{
 
 div{
     text-align: center;
-    display:grid;
+/*    display:grid; // breaks the menu */
 }
 
 .text {
@@ -118,6 +119,16 @@ cards {
     text-align:center;
     align-self:center;  
 }
+
+.topbar{
+  margin-top:80px;
+}
+
+@media only screen and (max-width: 400px) { 
+  .topbar{
+    margin-top:20px;
+  }
+}
 /* END Welcome Page */
 
 /* START Cover Page */
@@ -148,6 +159,7 @@ grid-item {
   margin-left:20px;
   margin-top:60px;
 }
+
 grid-item:nth-child(2) {
   margin-left:20px;
   margin-top:60px;
@@ -155,7 +167,6 @@ grid-item:nth-child(2) {
 }
 
 .covertext{
-  font-family:'Gothic A1', sans-serif;
   color:white;
   font-size:1.4em;
   -webkit-transform: scale(1, 1.2);
@@ -271,6 +282,11 @@ grid-item:nth-child(2) {
   margin-bottom:60px;
 }
 
+.bio {
+  align-self: center;
+  padding:20px;
+}
+
 .Popup {
   grid-area: Popup;
   position:relative;
@@ -278,12 +294,17 @@ grid-item:nth-child(2) {
   order:2;
 }
 
-@media (max-width: 1000px) { 
+@media only screen and (max-width: 500px) { 
   .item {
     grid-column: span 2;
   }
   .upper{
     font-size:1.5em;
+  }
+  .author{
+    margin-top:30px;
+    margin-right:20px;
+    margin-left:20px;
   }
 }
 

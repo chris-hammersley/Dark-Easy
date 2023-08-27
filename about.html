@@ -3,17 +3,39 @@
 <head>
     <title>More About The Author Of The Dark Easy by Michael Crame</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" media="all" href="css/menu.css" />
     <link rel="stylesheet" media="all" href="css/custom.css" />
+    <script src="js/modernizr-2.6.2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="js/dnd.js" type="text/javascript" charset="UTF-8"></script>
 </head>
     <body>
+        <script>
+            jQuery('body').css('display','none');
+            jQuery(document).ready(function() {
+                jQuery('body').fadeIn();
+                jQuery('a').on('click',function(event){
+                    var thetarget = this.getAttribute('target')
+                    var theClass = this.ClassName()
+                    if ((thetarget != "_blank")) || (theClass != "ml-onclick-form")){         
+                        var thehref = this.getAttribute('href')
+                        event.preventDefault();
+                        jQuery('body').fadeOut('slow', function(){
+                            //alert(thehref)
+                            window.location = thehref;                 
+                        });
+                    }
+                });
+            });
+            setTimeout(function(){
+                jQuery('body').fadeIn();
+            },2000)
+        </script>
         <div class="container7">
           <div class="item spanner">
             <h1 class="upper">Your Author</h1>
           </div>
           <div class="item spanner"></div>
-            <div>
+            <div class="bio">
             <h1 class="item">Michael Crame</h1>
             <p class="item covertext author">Writes novels, short stories, plays and screenplays of differing genres.<br/><br/>"The Dark Easy" is his Award-Winning Novel and the beginning of his urban fantasy series.</p>
           </div>
@@ -21,6 +43,18 @@
             <a class="ml-onclick-form" href="javascript:void(0)" onclick="ml('show', 'kTXTFA', true)"><img class="glow-author" src="images/michael-crame-author-dark-easy.jpg" width="400px"></a>
           </div>
         </div>
+        <!-- Start Nav Structure -->
+            <button class="cn-button" id="cn-button">Menu</button>
+            <div class="cn-wrapper" id="cn-wrapper">
+                <ul>
+                    <li><a href="cover.html"><span>Cover</span></a></li>
+                    <li><a href="characters.html"><span>Players</span></a></li>
+                    <li><a href="trilogy.html"><span>Trilogy</span></a></li>
+                    <li><a href="invitation.html"><span>ARC</span></a></li>
+                    <li><a href="about.html"><span>About</span></a></li>
+                 </ul>
+            </div>
+        <!-- End of Nav Structure -->
           <!-- MailerLite Universal -->
             <script>
                 (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
@@ -30,6 +64,37 @@
                 ml('account', '532780');
             </script>
           <!-- End MailerLite Universal -->
+          <!-- Menu Script-->
+          <script>
+          (function(){
+
+            var button = document.getElementById('cn-button'),
+              wrapper = document.getElementById('cn-wrapper');
+
+            //open and close menu when the button is clicked
+            var open = false;
+            button.addEventListener('click', handler, false);
+            button.addEventListener('focus', handler, false);
+
+            function handler(){
+              if(!open){
+                this.innerHTML = "X";
+                classie.add(wrapper, 'opened-nav');
+              }
+              else{
+                this.innerHTML = "Menu";
+              classie.remove(wrapper, 'opened-nav');
+              }
+              open = !open;
+            }
+            function closeWrapper(){
+              classie.remove(wrapper, 'opened-nav');
+            }
+
+          })();
+          </script>
+          <script src="js/polyfills.js"></script>
+          <!-- End Menu Script-->
           <script>
             document.addEventListener("DOMContentLoaded", () => {
               window.setTimeout(function() {

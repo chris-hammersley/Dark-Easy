@@ -4,66 +4,32 @@
     <title>The Dark Easy by Michael Crame</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" media="all" href="css/menu.css" />
+    <link rel="stylesheet" media="all" href="css/lagniappe.css" />
     <script src="js/modernizr-2.6.2.min.js"></script>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800;900&display=swap');
-
-        h1, h2, h3, h4, h5, h6, a {
-          font-family: 'Gothic A1', sans-serif;
-        }
-
-        p {
-          font-family: 'Gothic A1', sans-serif;
-          font-size:1.5em;
-          color:#F676C6;
-          margin-bottom:60px;
-        }
-
-        p::first-letter {
-          font-size: 2rem;
-          font-weight: bold;
-          color: #f676c6;
-        }
-
-        h1,h2,h3,h4{
-            color:#fff;
-        }
-
-        h1{
-            font-size:3em;
-            font-weight: 900;
-            padding-top:40px;
-        }
-
-        img {
-            display:flex;
-            float: left;
-            margin-left:50px;
-            margin-bottom:20px;
-            margin-right:20px;
-            margin-top:-20px;
-        }
-
-        html {
-            background-color:#000;
-        }
-
-        body {
-            background-color: #000;
-        }
-        .covertext{
-          font-family:'Gothic A1', sans-serif;
-          color:white;
-          font-size:1.4em;
-          margin:50px;
-          -webkit-transform: scale(1, 1.2);
-          -moz-transform: scale(1, 1.2);
-          -o-transform: scale(1, 1.2);
-          transform: scale(1, 1.2);
-        }
-        </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
-<body>
+    <body>
+        <script>
+            jQuery('body').css('display','none');
+            jQuery(document).ready(function() {
+                jQuery('body').fadeIn();
+                jQuery('a').on('click',function(event){
+                    var thetarget = this.getAttribute('target')
+                    var theClass = this.ClassName()
+                    if ((thetarget != "_blank")) || (theClass != "ml-onclick-form")){         
+                        var thehref = this.getAttribute('href')
+                        event.preventDefault();
+                        jQuery('body').fadeOut('slow', function(){
+                            //alert(thehref)
+                            window.location = thehref;                 
+                        });
+                    }
+                });
+            });
+            setTimeout(function(){
+                jQuery('body').fadeIn();
+            },2000)
+        </script>
         <center><h1>"Lagniappe"</h1></center>
         <p class="covertext">Lagniappe (lan-yap) - a Cajun-French inspired noun meaning “a little extra.” Often used to describe something good, it’s NOLA speak for receiving anything extra, or better yet, receiving something for free. To that end I’ll be giving away something “a little extra” to random people on the email list from time to time. So if you’re signed up, thank you! You’re automatically entered into future giveaways.</p>
 
@@ -75,11 +41,12 @@
 
         <p class="covertext">I hope you become fans of the series and look forward to the books as they’re published. I hope to foster a sense of community, like you’re among friends sitting at a bar with me in the French Quarter, as I tell you these tall tales. Your experience matters to me. A writer has a responsibility to entertain you if they put themselves out there for <i>your</i> entertainment. After all, you’re giving me your money and attention and I want you to close the book and say: Damn, Mike. That was worth it.</p>
 
-        <p class="covertext">If that happens then I’ve done my job. If it doesn't, I’ll do better next time.</p>
+        <p class="covertext" style="margin-top:20px">If that happens then I’ve done my job. If it doesn't, I’ll do better next time.</p>
 
-        <p class="covertext">Welcome to The Dark Easy.</p>
-            <!-- Start Nav Structure -->
-            <button class="cn-button glow-pic" id="cn-button">Deal</button>
+        <h2 class="covertext-final">Welcome to The Dark Easy.</h2>
+
+        <!-- Start Nav Structure -->
+            <button class="cn-button" id="cn-button">Menu</button>
             <div class="cn-wrapper" id="cn-wrapper">
                 <ul>
                     <li><a href="cover.html"><span>Cover</span></a></li>
@@ -89,8 +56,8 @@
                     <li><a href="about.html"><span>About</span></a></li>
                  </ul>
             </div>
-            <!-- End of Nav Structure -->
-</body>
+        <!-- End of Nav Structure -->
+    <!-- Menu Script-->
         <script>
         (function(){
 
@@ -104,11 +71,11 @@
 
           function handler(){
             if(!open){
-              this.innerHTML = "Choose";
+              this.innerHTML = "X";
               classie.add(wrapper, 'opened-nav');
             }
             else{
-              this.innerHTML = "Deal";
+              this.innerHTML = "Menu";
             classie.remove(wrapper, 'opened-nav');
             }
             open = !open;
@@ -120,4 +87,15 @@
         })();
         </script>
         <script src="js/polyfills.js"></script>
+    <!-- End Menu Script-->
+    
+    <!-- Fade Script-->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              window.setTimeout(function() {
+                document.body.className = '';
+              }, 330);
+            });
+        </script>
+    </body>
 </html>
