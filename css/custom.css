@@ -144,16 +144,6 @@ grid-container {
 grid-item:nth-child(1) { grid-area: column-1;}
 grid-item:nth-child(2) { grid-area: column-2;}
 
-@media ( max-width: 500px ) {  
-  grid-container { 
-        grid-gap:90px;
-        margin-top:80px;
-        grid-template-columns: 1fr; 
-        grid-template-areas: " column-2 " 
-                             " column-1 ";
-        }
-}
-
 grid-item {
   display: flex;
   margin-left:20px;
@@ -173,6 +163,29 @@ grid-item:nth-child(2) {
   -moz-transform: scale(1, 1.2);
   -o-transform: scale(1, 1.2);
   transform: scale(1, 1.2);
+}
+
+@media ( max-width: 500px ) {  
+  grid-container { 
+        grid-gap:90px;
+        margin-top:80px;
+        grid-template-columns: 1fr; 
+        grid-template-areas: " column-2 " 
+                             " column-1 ";
+      }
+  grid-item {
+        display: flex;
+        align-self:center;
+        margin-left:4px;
+      }
+  grid-item:nth-child(2) {
+        margin-left:4px;
+        margin-top:60px;
+        margin-right:4px;
+      }
+  .glow-author {
+    width: 90%!important;
+  }
 }
 /* END Cover Page */
 
@@ -217,9 +230,8 @@ grid-item:nth-child(2) {
 
 .invite {
     width: 600px;
-    height:600px;
     will-change: filter;
-    transition: filter 1s ease-out;
+    transition: filter 2s ease-out;
 }
 
 .invite:hover{
@@ -251,6 +263,14 @@ grid-item:nth-child(2) {
 
 #popup{
     display:none;
+}
+
+@media ( max-width: 500px ) {  
+    .invite {
+        width: 400px;
+        will-change: filter;
+        transition: filter 2s ease-out;
+    }
 }
 /* END Invitation Page */
 
@@ -295,6 +315,9 @@ grid-item:nth-child(2) {
 }
 
 @media only screen and (max-width: 500px) { 
+  .container7 {
+    margin:0;
+  }
   .item {
     grid-column: span 2;
   }
@@ -306,9 +329,14 @@ grid-item:nth-child(2) {
     margin-right:20px;
     margin-left:20px;
   }
+  .glow-author{
+    width:80%!important;
+  }
 }
 
 /* END About Page */
+
+/* GLOWS */
 
 .glow {
   font-size: 180px;
@@ -331,7 +359,7 @@ grid-item:nth-child(2) {
     width: 200px;
     height: 300px;
     border-radius: 5%;
-    animation: glow-image 2s ease-in-out infinite alternate;
+    animation: glow-image 1s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes glow-image {

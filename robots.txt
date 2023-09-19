@@ -1,0 +1,3 @@
+user-agent: * 
+disallow: /lagniappe.html
+crawl-delay: 60
