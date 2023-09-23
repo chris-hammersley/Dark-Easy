@@ -152,7 +152,7 @@ grid-item {
 
 grid-item:nth-child(2) {
   margin-left:20px;
-  margin-top:60px;
+  margin-top:90px;
   margin-right:60px;
 }
 
@@ -245,31 +245,29 @@ grid-item:nth-child(2) {
 }
 
 #horrorigins{
-  width:30%;
-  height:30%;
-  top:-190;
-  left:125;
+  width:40%;
+  height:40%;
+  top:20;
 }
 
 #screencraft{
   width:40%;
   height:40%;
-  top:-550;
-  right:100;  
+  top:20;
 }
 
 @media only screen and (max-width: 500px) {
   #horrorigins{
   width:30%;
-  height:30%;
-  top:-150;
-  left:110;
+  top:20;
+  left:20;
+  padding-bottom:20px;
 }
 #screencraft{
-  width:40%;
-  height:40%;
-  top:-435;
-  right:90;  
+  width:30%;
+  top:20;
+  right:40;
+  padding-bottom:20px;
   }
 }
 /* END Trilogy Page */
