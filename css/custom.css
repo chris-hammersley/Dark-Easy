@@ -147,13 +147,36 @@ grid-item:nth-child(2) { grid-area: column-2;}
 grid-item {
   display: flex;
   margin-left:20px;
-  margin-top:60px;
+  margin-top:30px;
 }
 
 grid-item:nth-child(2) {
   margin-left:20px;
   margin-top:60px;
   margin-right:60px;
+}
+
+.cover-pic {
+    position:relative;
+/*    display:inline-block;*/
+}
+
+.horrorigin-badge{
+  position: absolute;
+  width:40%;
+  bottom: -120;
+  right: 220;
+/*  top:400;
+  left:125; // on top of cover image */
+}
+
+.screencraft-badge{
+  position: absolute;
+  width:40%;
+  bottom: -120;
+  right: 20;
+/*  top:60;
+  left:125; // on top of cover image */
 }
 
 .covertext{
@@ -213,6 +236,41 @@ grid-item:nth-child(2) {
 
 .coming-soon {
     border-radius: 5%;
+}
+
+.badge{
+  display:flex;
+  z-index:10;
+  position:relative;
+}
+
+#horrorigins{
+  width:30%;
+  height:30%;
+  top:-190;
+  left:125;
+}
+
+#screencraft{
+  width:40%;
+  height:40%;
+  top:-550;
+  right:100;  
+}
+
+@media only screen and (max-width: 500px) {
+  #horrorigins{
+  width:30%;
+  height:30%;
+  top:-150;
+  left:110;
+}
+#screencraft{
+  width:40%;
+  height:40%;
+  top:-435;
+  right:90;  
+  }
 }
 /* END Trilogy Page */
 

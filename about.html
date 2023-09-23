@@ -58,7 +58,7 @@
                  </ul>
             </div>
         <!-- End of Nav Structure -->
-          <!-- MailerLite Universal -->
+        <!-- MailerLite Universal -->
             <script>
                 (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
                 .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
@@ -66,44 +66,46 @@
                 (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
                 ml('account', '532780');
             </script>
-          <!-- End MailerLite Universal -->
-          <!-- Menu Script-->
-          <script>
-          (function(){
+        <!-- End MailerLite Universal -->
+        <!-- Menu Script-->
+            <script>
+            (function(){
 
-            var button = document.getElementById('cn-button'),
-              wrapper = document.getElementById('cn-wrapper');
+              var button = document.getElementById('cn-button'),
+                wrapper = document.getElementById('cn-wrapper');
 
-            //open and close menu when the button is clicked
-            var open = false;
-            button.addEventListener('click', handler, false);
-            button.addEventListener('focus', handler, false);
+              //open and close menu when the button is clicked
+              var open = false;
+              button.addEventListener('click', handler, false);
+              button.addEventListener('focus', handler, false);
 
-            function handler(){
-              if(!open){
-                this.innerHTML = "X";
-                classie.add(wrapper, 'opened-nav');
+              function handler(){
+                if(!open){
+                  this.innerHTML = "X";
+                  classie.add(wrapper, 'opened-nav');
+                }
+                else{
+                  this.innerHTML = "Menu";
+                classie.remove(wrapper, 'opened-nav');
+                }
+                open = !open;
               }
-              else{
-                this.innerHTML = "Menu";
-              classie.remove(wrapper, 'opened-nav');
+              function closeWrapper(){
+                classie.remove(wrapper, 'opened-nav');
               }
-              open = !open;
-            }
-            function closeWrapper(){
-              classie.remove(wrapper, 'opened-nav');
-            }
 
-          })();
-          </script>
-          <script src="js/polyfills.js"></script>
-          <!-- End Menu Script-->
-          <script>
+            })();
+            </script>
+            <script src="js/polyfills.js"></script>
+        <!-- End Menu Script-->
+
+        <!-- Fade Script-->
+        <script>
             document.addEventListener("DOMContentLoaded", () => {
               window.setTimeout(function() {
                 document.body.className = '';
               }, 330);
             });
-          </script>
+        </script>
     </body>
 </html>

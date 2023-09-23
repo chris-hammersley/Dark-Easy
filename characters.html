@@ -6,8 +6,10 @@
     <meta name="title" content="The Characters of The Dark Easy - A Hardboiled Urban Fantasy Novel by Michael Crame">
     <meta name="author" content="Michael Crame">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" media="all" href="css/menu.css" />
     <link rel="stylesheet" media="all" href="css/custom.css" />
-    <link rel="stylesheet" media="all" href="css/flip2.css" />    
+    <link rel="stylesheet" media="all" href="css/flip2.css" />  
+    <script src="js/modernizr-2.6.2.min.js"></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="js/flip.js" type="text/javascript" charset="UTF-8"></script>
 </head>
@@ -171,12 +173,58 @@
                 </div>
             </div>
           </div>
-          <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      window.setTimeout(function() {
-        document.body.className = '';
-      }, 330);
-    });
-  </script>
+
+        <!-- Start Nav Structure -->
+            <button class="cn-button" id="cn-button">Menu</button>
+            <div class="cn-wrapper" id="cn-wrapper">
+                <ul>
+                    <li><a href="cover.html"><span>Cover</span></a></li>
+                    <li><a href="characters.html"><span>Players</span></a></li>
+                    <li><a href="trilogy.html"><span>Trilogy</span></a></li>
+                    <li><a href="invitation.html"><span>ARC</span></a></li>
+                    <li><a href="about.html"><span>About</span></a></li>
+                 </ul>
+            </div>
+        <!-- End of Nav Structure -->
+        <!-- Menu Script-->
+            <script>
+            (function(){
+
+              var button = document.getElementById('cn-button'),
+                wrapper = document.getElementById('cn-wrapper');
+
+              //open and close menu when the button is clicked
+              var open = false;
+              button.addEventListener('click', handler, false);
+              button.addEventListener('focus', handler, false);
+
+              function handler(){
+                if(!open){
+                  this.innerHTML = "X";
+                  classie.add(wrapper, 'opened-nav');
+                }
+                else{
+                  this.innerHTML = "Menu";
+                classie.remove(wrapper, 'opened-nav');
+                }
+                open = !open;
+              }
+              function closeWrapper(){
+                classie.remove(wrapper, 'opened-nav');
+              }
+
+            })();
+            </script>
+            <script src="js/polyfills.js"></script>
+        <!-- End Menu Script-->
+
+        <!-- Fade Script-->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              window.setTimeout(function() {
+                document.body.className = '';
+              }, 330);
+            });
+        </script>
     </body>
 </html>
