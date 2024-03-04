@@ -19,7 +19,7 @@
                 jQuery('a').on('click',function(event){
                     var thetarget = this.getAttribute('target')
                     var theClass = this.ClassName()
-                    if ((thetarget != "_blank")) || (theClass != "ml-onclick-form")){         
+                    if (thetarget != "_blank") {         
                         var thehref = this.getAttribute('href')
                         event.preventDefault();
                         jQuery('body').fadeOut('slow', function(){
@@ -55,7 +55,7 @@
                     <li><a href="cover.html"><span>Cover</span></a></li>
                     <li><a href="characters.html"><span>Players</span></a></li>
                     <li><a href="trilogy.html"><span>Trilogy</span></a></li>
-                    <li><a href="invitation.html"><span>ARC</span></a></li>
+                    <li><a href="invitation.html"><span>Buy Online</span></a></li>
                     <li><a href="about.html"><span>About</span></a></li>
                  </ul>
             </div>

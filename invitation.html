@@ -17,7 +17,7 @@
                 jQuery('a').on('click',function(event){
                     var thetarget = this.getAttribute('target')
                     var theClass = this.ClassName()
-                    if ((thetarget != "_blank")) || (theClass != "ml-onclick-form")){         
+                    if ((thetarget != "_blank"));{         
                         var thehref = this.getAttribute('href')
                         event.preventDefault();
                         jQuery('body').fadeOut('slow', function(){
@@ -33,20 +33,11 @@
         </script>
         <div class="container6">
           <div class="content">
-            <a class="ml-onclick-form" href="javascript:void(0)" onclick="ml('show', 'StLBUB', true)"><img class="invite" src="images/skull-invite.png" width="600px"></a>
-            <h2>Click The Invitation To Signup for Your FREE Advance Reader Copy of The Dark Easy</h2>
+              <a href="https://books2read.com/u/bwBp2Z" target="_blank"><img class="invite" src="images/skull-invite.png" width="600px"></a>
+            <h3>The Dark Easy is on sale now! <br /> Click the invitation to purchase from your book seller of choice.</h3>
             <a href="about.html" target="_self"><button class="button">Learn More About The Author</button></a>
           </div>
         </div>
-        <!-- MailerLite Universal -->
-          <script>
-              (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-              .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-              n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-              (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-              ml('account', '532780');
-          </script>
-        <!-- End MailerLite Universal -->
           <script>
             document.addEventListener("DOMContentLoaded", () => {
               window.setTimeout(function() {

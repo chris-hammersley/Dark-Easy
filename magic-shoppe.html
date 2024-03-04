@@ -1,0 +1,116 @@
+<html lang=en>
+<meta charset=utf-8>
+<head>
+    <title>Welcome To Frikell & Cooke's Magic Shoppe</title>
+    <meta name="description" content="Do you like games of chance? Insert a coin and find your fortune.">
+    <meta name="title" content="Frikell & Cooke's Magic Shoppe">
+    <meta name="author" content="Michael Crame">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" media="all" href="css/custom.css" />
+    <link rel="stylesheet" media="all" href="css/flip2.css" /> 
+    <script src="js/modernizr-2.6.2.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="js/flip.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+    <body>
+        <script>
+            jQuery('body').css('display','none');
+            jQuery(document).ready(function() {
+                jQuery('body').fadeIn();
+                jQuery('a').on('click',function(event){
+                    var thetarget = this.getAttribute('target')
+                    if (thetarget != "_blank"){         
+                        var thehref = this.getAttribute('href')
+                        event.preventDefault();
+                        jQuery('body').fadeOut('slow', function(){
+                            //alert(thehref)
+                            window.location = thehref;                 
+                        });
+                    }
+                });
+            });
+            setTimeout(function(){
+                jQuery('body').fadeIn();
+            },2000)
+        </script>
+        <div class="container8">
+            <div class="div1">
+                <img src="images/corner-motif-top-left.png" height="200px" width="200px">
+            </div>
+            <div class="div2">
+                <img src="images/corner-motif-top-right.png"  height="200px" width="200px">
+            </div>
+            <div class="div3">
+                <img src="images/corner-motif-bottom-left.png"  height="200px" width="200px">
+            </div>
+            <div class="div4">
+                <img src="images/corner-motif-bottom-right.png"  height="200px" width="200px">
+            </div>
+            <div class="div5">
+                <img src="images/zoltar.png" width="400px" height="400px" style="margin-bottom: 30px;">
+                <img class="enter" src="images/devils-mouth.png" width="100px" style="margin-top:-50px">
+                <ms1>THE WAY TO DO MAGIC</ms1>
+            </div>
+            <div class="div6">
+                <div class="flip-container fronted" 
+                onclick="this.swapClasses('fronted,backed');">
+                  <div class="flipper fli300">
+                      <div class="front c1">
+                          <img src="images/tarot-card-front.png" width="150px" height="225px">
+                      </div>
+                      <div class="back c2">
+                          <img class="card-edge" src="images/the-devil.png" width="150px" height="225px">
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <div class="div7">
+                <div class="flip-container fronted" 
+                onclick="this.swapClasses('fronted,backed');">
+                  <div class="flipper fli300">
+                      <div class="front c1">
+                          <img src="images/tarot-card-front.png" width="150px" height="225px">
+                      </div>
+                      <div class="back c2">
+                          <img class="card-edge" src="images/the-magician.png" width="150px" height="225px">
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <div class="div8">
+                <div class="flip-container fronted" 
+                onclick="this.swapClasses('fronted,backed');">
+                  <div class="flipper fli300">
+                      <div class="front c1">
+                          <img src="images/tarot-card-front.png" width="150px" height="225px">
+                      </div>
+                      <div class="back c2">
+                          <img class="card-edge" src="images/the-fool.png" width="150px" height="225px">
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <div class="div9">
+                <div class="flip-container fronted" 
+                onclick="this.swapClasses('fronted,backed');">
+                  <div class="flipper fli300">
+                      <div class="front c1">
+                          <img src="images/tarot-card-front.png" width="150px" height="225px">
+                      </div>
+                      <div class="back c2">
+                        <a href="welcome.html" target="_self"> <img class="glow-image" src="images/the-death.png" width="150px" height="225px">
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fade Script-->
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              window.setTimeout(function() {
+                document.body.className = '';
+              }, 330);
+            });
+          </script>
+    </body>
+</html>

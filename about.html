@@ -19,7 +19,8 @@
                 jQuery('a').on('click',function(event){
                     var thetarget = this.getAttribute('target')
                     var theClass = this.ClassName()
-                    if ((thetarget != "_blank")) || (theClass != "ml-onclick-form")){         
+                    if ((thetarget != "_blank"));
+                    {         
                         var thehref = this.getAttribute('href')
                         event.preventDefault();
                         jQuery('body').fadeOut('slow', function(){
@@ -41,6 +42,12 @@
             <div class="bio">
             <h1 class="item">Michael Crame</h1>
             <p class="item covertext author">Writes novels, short stories, plays and screenplays of differing genres.<br/><br/>"The Dark Easy" is his Award-Winning Novel and the beginning of his urban fantasy series.</p>
+            <div class="ig-icons">
+              <div class="ig-badge"><a href="https://www.instagram.com/penmonkey/" target="_blank"><img src="./images/fleur-de-lys-icon.png"></a>
+              </div>
+              <div class="ig-badge"><a href="https://www.instagram.com/the_dark_easy/" target="_blank"><img src="./images/ace-spades.png" width="64px" height="64px"></a>
+              </div>
+            </div>
           </div>
           <div class="item">
             <a class="ml-onclick-form" href="javascript:void(0)" onclick="ml('show', 'kTXTFA', true)"><img class="glow-author" src="images/michael-crame-author-dark-easy.jpg"></a>
@@ -53,7 +60,7 @@
                     <li><a href="cover.html"><span>Cover</span></a></li>
                     <li><a href="characters.html"><span>Players</span></a></li>
                     <li><a href="trilogy.html"><span>Trilogy</span></a></li>
-                    <li><a href="invitation.html"><span>ARC</span></a></li>
+                    <li><a href="invitation.html"><span>Buy Online</span></a></li>
                     <li><a href="about.html"><span>About</span></a></li>
                  </ul>
             </div>
