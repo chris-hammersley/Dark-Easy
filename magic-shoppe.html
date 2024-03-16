@@ -13,25 +13,31 @@
     <script src="js/flip.js" type="text/javascript" charset="UTF-8"></script>
 </head>
     <body>
+        <audio autoplay>
+            <source src="audio/creepy-carnival-music-soundcloud-erikmmusic.mp3"></source>
+        </audio>
         <script>
-            jQuery('body').css('display','none');
-            jQuery(document).ready(function() {
+            $('body').css('display','none');
+            const carnivalSound = new Audio("audio/creepy-carnival-music-soundcloud-erikmmusic.mp3");
+            $(document).ready(function() {
                 jQuery('body').fadeIn();
-                jQuery('a').on('click',function(event){
+                $( "#challenge" ).on( "click", function() {
+                    $('div.hidden').removeClass('hidden');
+                    carnivalSound.play();
+                } );
+                $('a').on('click',function(event){
                     var thetarget = this.getAttribute('target');
-                    var theclass = $('#challenge').attr('class');
-                    if (thetarget != "_blank" | theclass != "invisible"){         
+                    if (thetarget != "_blank"){         
                         var thehref = this.getAttribute('href')
                         event.preventDefault();
                         jQuery('body').fadeOut('slow', function(){
-                            //alert(thehref)
                             window.location = thehref;                 
                         });
-                    } $('div.hidden').removeClass('hidden');
+                    }
                 });
             });
             setTimeout(function(){
-                jQuery('body').fadeIn();
+                $('body').fadeIn();
             },2000)
         </script>
         <div class="container8">
@@ -48,8 +54,8 @@
                 <img src="images/corner-motif-bottom-right.png"  height="200px" width="200px">
             </div>
             <div class="div5">
-                <img src="images/zoltar.png" width="400px" height="400px" style="margin-bottom: 30px;">
-                <a id="challenge" class="invisible" href="#"><img class="challenge" src="images/devils-mouth.png" width="100px" style="margin-top:-50px"></a>
+                <img src="images/zoltar.png" width="500px" height="500px" style="margin-bottom: 30px;">
+                <img id="challenge" class="challenge" src="images/devils-mouth.png" width="100px" style="margin-top:-50px">
                 <ms1>THE WAY TO DO MAGIC</ms1>
             </div>
             <div class="div6 hidden">
@@ -60,7 +66,7 @@
                           <img src="images/tarot-card-front.png" width="150px" height="225px">
                       </div>
                       <div class="back c2">
-                          <img class="card-edge" src="images/the-devil.png" width="150px" height="225px">
+                          <img class="card-edge" src="images/devil-card-1.png" width="150px" height="225px">
                       </div>
                   </div>
                 </div>
@@ -73,7 +79,7 @@
                           <img src="images/tarot-card-front.png" width="150px" height="225px">
                       </div>
                       <div class="back c2">
-                          <img class="card-edge" src="images/the-magician.png" width="150px" height="225px">
+                          <img class="card-edge" src="images/angel-card-1.png" width="150px" height="225px">
                       </div>
                   </div>
                 </div>
@@ -86,7 +92,7 @@
                           <img src="images/tarot-card-front.png" width="150px" height="225px">
                       </div>
                       <div class="back c2">
-                          <img class="card-edge" src="images/the-fool.png" width="150px" height="225px">
+                          <img class="card-edge" src="images/angel-card-2.png" width="150px" height="225px">
                       </div>
                   </div>
                 </div>
@@ -99,7 +105,7 @@
                           <img src="images/tarot-card-front.png" width="150px" height="225px">
                       </div>
                       <div class="back c2">
-                        <a href="welcome.html" target="_self"> <img class="card-edge glow-tarot" src="images/the-death.png" width="150px" height="225px">
+                        <a href="welcome.html" target="_self"> <img class="card-edge glow-tarot" src="images/demon-card-1.png" width="150px" height="225px">
                       </div>
                   </div>
                 </div>

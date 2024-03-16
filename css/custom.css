@@ -3,7 +3,7 @@
 
  @font-face {
   font-family: London;
-  src: url(../fonts/london.tff);
+  src: url(../fonts/london.ttf);
 }
 
 ms1 {
@@ -431,11 +431,11 @@ grid-item:nth-child(2) {
 .div2 { grid-area: 1 / 5 / 2 / 6; position: fixed; top: 0; right: 0;} /* top right corner*/
 .div3 { grid-area: 2 / 1 / 3 / 2; position: fixed; bottom: 0; left: 0;} /* bottom left corner*/
 .div4 { grid-area: 2 / 5 / 3 / 6; position: fixed; bottom: 0; right: 0;} /* bottom right corner*/
-.div5 { grid-area: 1 / 3 / 3 / 4; margin-top: 40%; padding-bottom: 30px; align-content: center;}  /* zoltar machine*/
-.div6 { grid-area: 1 / 2 / 2 / 3; margin-top: 25%;  } /* devil card*/
-.div7 { grid-area: 1 / 4 / 2 / 5; margin-top: 25%;  } /* magician card*/
-.div8 { grid-area: 2 / 2 / 3 / 3; margin-top: 25%;  } /* fool card*/
-.div9 { grid-area: 2 / 4 / 3 / 5; margin-top: 25%;  } /* death card*/
+.div5 { grid-area: 1 / 3 / 3 / 4; margin-top: 15%; padding-bottom: 30px; align-content: center;}  /* zoltar machine*/
+.div6 { grid-area: 1 / 2 / 2 / 3; margin-top: 20%;  } /* devil card*/
+.div7 { grid-area: 1 / 4 / 2 / 5; margin-top: 20%;  } /* magician card*/
+.div8 { grid-area: 2 / 2 / 3 / 3; margin-top: 30%;  } /* fool card*/
+.div9 { grid-area: 2 / 4 / 3 / 5; margin-top: 30%;  } /* death card*/
 
 .hidden {
   display: none;
@@ -447,7 +447,7 @@ grid-item:nth-child(2) {
 }
 
 .challenge {
-  cursor: url("../images/challenge-coin.png"), auto;
+  cursor: url("../images/angel-coin-gold.png"), auto;
 }
 /* END Magic Shoppe Page
 
