@@ -428,9 +428,25 @@ grid-item:nth-child(2) {
 }
 
 .div1 { grid-area: 1 / 1 / 2 / 2; position: fixed; top: 0; left: 0;} /* top left corner*/
+.div1 img{
+  height:200px;
+  width:200px;
+}
 .div2 { grid-area: 1 / 5 / 2 / 6; position: fixed; top: 0; right: 0;} /* top right corner*/
+.div2 img{
+  height:200px;
+  width:200px;
+}
 .div3 { grid-area: 2 / 1 / 3 / 2; position: fixed; bottom: 0; left: 0;} /* bottom left corner*/
+.div3 img{
+  height:200px;
+  width:200px;
+}
 .div4 { grid-area: 2 / 5 / 3 / 6; position: fixed; bottom: 0; right: 0;} /* bottom right corner*/
+.div4 img{
+  height:200px;
+  width:200px;
+}
 .div5 { grid-area: 1 / 3 / 3 / 4; margin-top: 15%; padding-bottom: 30px; align-content: center;}  /* zoltar machine*/
 .div6 { grid-area: 1 / 2 / 2 / 3; margin-top: 20%;  } /* devil card*/
 .div7 { grid-area: 1 / 4 / 2 / 5; margin-top: 20%;  } /* magician card*/
@@ -448,6 +464,58 @@ grid-item:nth-child(2) {
 
 .challenge {
   cursor: url("../images/angel-coin-gold.png"), auto;
+}
+
+@media only screen and (max-width: 500px) { 
+  .container8 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 2 / 2; } /* top left corner*/
+    .div1 img{
+      height:100px;
+      width:100px;
+    }
+    .div2 { grid-area: 1 / 1 / 2 / 2; } /* top right corner*/
+    .div2 img{
+      height:100px;
+      width:100px;
+    }
+    .div3 { grid-area: 1 / 1 / 2 / 2; } /* bottom left corner*/
+    .div3 img{
+      height:100px;
+      width:100px;
+    }
+    .div4 { grid-area: 1 / 1 / 2 / 2; } /* bottom right corner*/
+    .div4 img{
+      height:100px;
+      width:100px;
+    }
+    .div5 { grid-area: 1 / 1 / 2 / 2; } /* zoltar machine*/
+    .div6 { 
+      grid-area: 1 / 1 / 2 / 2; 
+      margin-right:40%;
+      margin-top:20%;
+    } /* devil card*/
+    .div7 { 
+      grid-area: 1 / 1 / 2 / 2; 
+      margin-left:40%;
+      margin-top:20%;
+    } /* magician card*/
+    .div8 { 
+      grid-area: 1 / 1 / 2 / 2; 
+      margin-right:40%;
+      margin-top:80%;
+    } /* fool card*/
+    .div9 { 
+      grid-area: 1 / 1 / 2 / 2; 
+      margin-left:40%;
+      margin-top:80%;
+    } /* death card*/
 }
 /* END Magic Shoppe Page
 
