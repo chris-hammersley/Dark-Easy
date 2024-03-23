@@ -10,6 +10,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
     <body>
-
+        <script>
+            $('body').css('display','none');
+            const neonFlicker = new Audio("audio/neon-light-2-sec.mp3");
+            const neonBuzz = new Audio("audio/neon-buzz.mp3");
+            $(document).ready(function() {
+                jQuery('body').fadeIn();
+                $( "#turnon" ).on( "click", function() {
+                    $('div.div10').removeClass('hidden');
+                    $('div.div11').addClass('hidden');
+                    neonFlicker.play();
+                    neonBuzz.play();
+                } );
+                $('a').on('click',function(event){
+                    var thetarget = this.getAttribute('target');
+                    if (thetarget != "_blank"){         
+                        var thehref = this.getAttribute('href')
+                        event.preventDefault();
+                        jQuery('body').fadeOut('slow', function(){
+                            window.location = thehref;                 
+                        });
+                    }
+                });
+            });
+            setTimeout(function(){
+                $('body').fadeIn();
+            },2000)
+        </script>
+        <div class="container9">
+            <div class="div10 hidden">
+                <img src="images/eight-dragons-large-no-loop.gif">
+            </div>
+            <div class="div11">
+                <img id="turnon" src="images/eight-dragons-off.gif">
+            </div>
+        </div>
     </body>
 </html>
