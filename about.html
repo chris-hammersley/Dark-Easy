@@ -60,7 +60,7 @@
                     <li><a href="cover.html"><span>Cover</span></a></li>
                     <li><a href="characters.html"><span>Players</span></a></li>
                     <li><a href="trilogy.html"><span>Trilogy</span></a></li>
-                    <li><a href="invitation.html"><span>Buy Online</span></a></li>
+                    <li><a href="invitation.html"><span>On Sale</span></a></li>
                     <li><a href="about.html"><span>About</span></a></li>
                  </ul>
             </div>
@@ -88,12 +88,12 @@
 
               function handler(){
                 if(!open){
-                  this.innerHTML = "X";
                   classie.add(wrapper, 'opened-nav');
+                  this.innerHTML = "X";
                 }
                 else{
+                  classie.remove(wrapper, 'opened-nav');
                   this.innerHTML = "Menu";
-                classie.remove(wrapper, 'opened-nav');
                 }
                 open = !open;
               }

@@ -299,7 +299,7 @@ grid-item:nth-child(2) {
 }
 
 .invite {
-    width: 600px;
+    width: 400px;
     will-change: filter;
     transition: filter 2s ease-out;
 }
