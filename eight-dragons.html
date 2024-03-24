@@ -14,6 +14,7 @@
             $('body').css('display','none');
             const neonFlicker = new Audio("audio/neon-light-2-sec.mp3");
             const neonBuzz = new Audio("audio/neon-buzz.mp3");
+            const restaurantSounds = new Audio("audio/eight-dragons-cooking.mp3");
             $(document).ready(function() {
                 jQuery('body').fadeIn();
                 $( "#turnon" ).on( "click", function() {
@@ -21,6 +22,7 @@
                     $('div.div11').addClass('hidden');
                     neonFlicker.play();
                     neonBuzz.play();
+                    restaurantSounds.play();
                 } );
                 $('a').on('click',function(event){
                     var thetarget = this.getAttribute('target');
