@@ -1,0 +1,290 @@
+<html lang=en>
+<!DOCTYPE html>
+<meta charset=utf-8>
+<head>
+	<title>Make Your Order Now - Eight Dragons Chinese Food</title>
+	<meta charset=utf-8>
+	<meta name="description" content="Best Chinese Food Anywhere!">
+	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/icon.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+	<style type="text/css">
+		body{
+			margin:0;
+			padding-top:300;
+			height:100%;
+			width:80%;
+			background-image: URL('images/background-no-header.png');
+			background-size: 80%;
+		}
+		.header{
+			background-image: url('images/menu-banner.png');
+			background-size: 100%;
+			background-repeat: no-repeat;
+			height:300px;
+			position: relative;
+			top:-300;
+		}
+		.products{
+			list-style:none;
+			margin-right:80px;
+			padding:0px;
+		}
+		.products li{
+			display:inline;
+			float:left;
+			margin-left:40px;
+			margin-bottom:30px;
+		}
+		.item{
+			display:block;
+			text-decoration:none;
+			width:220px; /* controls food name width */
+		}
+		.item img{
+			border:1px solid #333;
+			height: 200px;
+			width: 200px;
+		}
+		.item p{
+			margin:0;
+			font-weight:bold;
+			text-align:center;
+			color:#000;
+		}
+		.cart{
+			position:fixed;
+			right:0;
+			top:0;
+			width:300px;
+			height:100%;
+			background:#ccc;
+			padding:0px 10px;
+		}
+		.container{
+			position: relative;
+		}
+		.appetizers{
+			position: absolute;
+			height:625px;
+			margin-right:40px;
+			margin-top:-300px
+		}
+		.noodles{
+			position: relative;
+			top:350px;
+		}
+		h1{
+			text-align:center;
+			color:#555;
+		}
+		h2{
+			position:absolute;
+			font-size:16px;
+			left:10px;
+			bottom:20px;
+			color:#555;
+		}
+		h3{
+			text-align:left;
+			color:#555;	
+			margin-top:20px;
+			font-size:2em;		
+		}
+		.total{
+			margin:0;
+			text-align:right;
+			padding-right:20px;
+		}
+	</style>
+	<script>
+		var data = {"total":0,"rows":[]};
+		var totalCost = 0;
+		
+		$(function(){
+			$('#cartcontent').datagrid({
+				singleSelect:true
+			});
+			$('.item').draggable({
+				revert:true,
+				proxy:'clone',
+				onStartDrag:function(){
+					$(this).draggable('options').cursor = 'not-allowed';
+					$(this).draggable('proxy').css('z-index',10);
+				},
+				onStopDrag:function(){
+					$(this).draggable('options').cursor='move';
+				}
+			});
+			$('.cart').droppable({
+				onDragEnter:function(e,source){
+					$(source).draggable('options').cursor='auto';
+				},
+				onDragLeave:function(e,source){
+					$(source).draggable('options').cursor='not-allowed';
+				},
+				onDrop:function(e,source){
+					var name = $(source).find('p:eq(0)').html();
+					var price = $(source).find('p:eq(1)').html();
+					addProduct(name, parseFloat(price.split('$')[1]));
+				}
+			});
+		});
+		
+		function addProduct(name,price){
+			function add(){
+				for(var i=0; i<data.total; i++){
+					var row = data.rows[i];
+					if (row.name == name){
+						row.quantity += 1;
+						return;
+					}
+				}
+				data.total += 1;
+				data.rows.push({
+					name:name,
+					quantity:1,
+					price:price
+				});
+			}
+			add();
+			totalCost += price;
+			$('#cartcontent').datagrid('loadData', data);
+			$('div.cart .total').html('Total: $'+totalCost);
+		}
+	</script>
+</head>
+<body>
+	<container>
+		<div class="header"></div>
+		<div class="appetizers">
+		<h3><strong>APPETIZERS</strong></h3>
+		<ul class="products">
+			<li>
+				<a href="#" class="item">
+					<img src="images/egg-rolls.jpg"/>
+					<div>
+						<p>Egg Rolls (2)</p>
+						<p>Price:$3.50</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="item">
+					<img src="images/spring-rolls.jpg"/>
+					<div>
+						<p>Spring Rolls (4)</p>
+						<p>Price:$4.25</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="item">
+					<img src="images/fried-chicken-wings.jpg"/>
+					<div>
+						<p>Fried Chicken Wings (6)</p>
+						<p>Price:$6.50</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="item">
+					<img src="images/fried-wonton.jpg"/>
+					<div>
+						<p>Fried Wonton (6)</p>
+						<p>Price:$3.75</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="item">
+					<img src="images/crab-rangoon.jpg"/>
+					<div>
+						<p>Crab Rangoon (6)</p>
+						<p>Price:$5.50</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="item">
+					<img src="images/pizza-puff.jpg"/>
+					<div>
+						<p>Pizza Puff (2)</p>
+						<p>Price:$4.75</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="item">
+					<img src="images/chicken-fingers.jpg"/>
+					<div>
+						<p>Chinese Chicken Fingers (4)</p>
+						<p>Price:$5.75</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+		</div>
+		<div class="noodles">
+		<h3><strong>NOODLES AND RICE</strong></h3>
+		<ul class="products">
+			<li>
+				<a href="#" class="item">
+					<img src="images/bbq-pork-chow-mein.jpg"/>
+					<div>
+						<p>BBQ Pork or Beef Chow Mein</p>
+						<p>Price:$6.75</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="item">
+					<img src="images/veggie-chow-mein.jpg"/>
+					<div>
+						<p>Vegetable Chow Mein</p>
+						<p>Price:$5.75</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="item">
+					<img src="images/fried-rice.jpg"/>
+					<div>
+						<p>Fried Rice: BBQ Pork, Chicken, Shrimp, or Vegetable</p>
+						<p>Price:$7.25</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="item">
+					<img src="images/house-fried-rice.jpg"/>
+					<div>
+						<p>House Fried Rice (Chef's Special)</p>
+						<p>Price:$8.75</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+		</div>
+		<div class="cart">
+			<h1><img src="images/dragon-menu-icon.png" width="75px"> 八龙餐厅</h1>
+			<h1 style="color:red; text-transform:uppercase">Eight Dragons Restaurant</h1>
+			<div style="text-decoration:underline;"><h3 style="padding-bottom:10px">No.&nbsp;&nbsp;<span style="color:red;vertical-align: super">0047505</span></h3></div>
+			<div style="background:#959286">
+			<table id="cartcontent" fitColumns="true" style="width:300px;height:auto;">
+				<thead>
+					<tr>
+						<th field="name" width=140>Name</th>
+						<th field="quantity" width=60 align="right">Quantity</th>
+						<th field="price" width=60 align="right">Price</th>
+					</tr>
+				</thead>
+			</table>
+			</div>
+			<p class="total">Total: $0</p>
+			<h2>Drop here to add food</h2>
+		</div>
+	</container>
+</body>
+</html>
