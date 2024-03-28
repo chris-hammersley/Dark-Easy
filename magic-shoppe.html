@@ -21,11 +21,12 @@
             const coinFlip = new Audio('audio/coin-pile.mp3');
             $(document).ready(function() {
                 jQuery('body').fadeIn();
-                $("#coin-choice").on("click", function () {
+                $("#coin").on("click", function () {
                     coinFlip.play();
                     $('div.coin').fadeOut( 1600, function() {
                         $('div.container8').removeClass('hidden');
                         $('div.coin').addClass('hidden');
+                        $('article').addClass('hidden');
                     });
                 });
                 $( "#challenge" ).on( "click", function() {
@@ -67,7 +68,20 @@
             },2000)
         </script>
         <!-- Spinning Coin -->
-        <div id="coin-choice" class="coin"></div>
+        <!--div id="coin-choice" class="coin"></div-->
+        <div id="coin" class="coin">
+            <article class="coinback"></article>
+              <article class="coinmiddle"></article>
+              <article class="coinmiddle"></article>
+              <article class="coinmiddle"></article>
+              <article class="coinmiddle"></article>
+              <article class="coinmiddle"></article>
+              <article class="coinmiddle"></article>
+              <article class="coinmiddle"></article>
+              <article class="coinmiddle"></article>
+              <article class="coinmiddle"></article>
+            <article class="coinfront"></article>
+          </div>
         <!-- END Spinning Coin -->
 
         <!-- Fortune Teller -->
