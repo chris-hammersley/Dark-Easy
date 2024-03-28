@@ -8,6 +8,7 @@
     <meta name="author" content="Michael Crame">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" media="all" href="css/custom.css" />
+    <link rel="stylesheet" media="all" href="css/spinning-coin.css" />
     <link rel="stylesheet" media="all" href="css/flip2.css" /> 
     <script src="js/modernizr-2.6.2.min.js"></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -17,12 +18,29 @@
         <script>
             $('body').css('display','none');
             const carnivalSound = new Audio("audio/creepy-carnival-music-soundcloud-erikmmusic.mp3");
+            const coinFlip = new Audio('audio/coin-pile.mp3');
             $(document).ready(function() {
                 jQuery('body').fadeIn();
+                $("#coin-choice").on("click", function () {
+                    coinFlip.play();
+                    $('div.coin').fadeOut( 1600, function() {
+                        $('div.container8').removeClass('hidden');
+                        $('div.coin').addClass('hidden');
+                    });
+                });
                 $( "#challenge" ).on( "click", function() {
-                    $('div.hidden').removeClass('hidden');
+                    $('div.div6').removeClass('hidden');
                     $('div.div5').addClass('transparent');
                     carnivalSound.play();
+                });
+                $("#card1").on("click", function() {
+                    $('div.div7').removeClass('hidden');
+                });
+                $("#card2").on("click", function() {
+                    $('div.div8').removeClass('hidden');
+                });
+                $("#card3").on("click", function() {
+                    $('div.div9').removeClass('hidden');
                 });
                 $('.overlay').on('mouseenter',function() {
                     $('img.hidden').removeClass('hidden');
@@ -48,7 +66,12 @@
                 $('body').fadeIn();
             },2000)
         </script>
-        <div class="container8">
+        <!-- Spinning Coin -->
+        <div id="coin-choice" class="coin"></div>
+        <!-- END Spinning Coin -->
+
+        <!-- Fortune Teller -->
+        <div class="container8 hidden">
             <div class="div1">
                 <img src="images/corner-motif-top-left.png">
             </div>
@@ -63,12 +86,12 @@
             </div>
             <div class="div5">
                 <img class="magnify hidden">
-                <img src="images/zoltar.png" width="500px" height="500px" style="margin-bottom: 30px;">
-                <img id="challenge" class="challenge" src="images/devils-mouth.png" width="100px" style="margin-top:-50px">
-                <ms1>THE WAY TO DO MAGIC</ms1>
+                <img class="kiosk" src="images/fortune-teller.png">
+                <img class="tagline" src="images/the-way-to-do-magic.png">
+                <img id="challenge" class="challenge" src="images/devil-coin-slot.png">
             </div>
             <div class="div6 hidden">
-                <div class="flip-container fronted" 
+                <div id="card1" class="flip-container fronted" 
                 onclick="this.swapClasses('fronted,backed');">
                   <div class="flipper fli300">
                       <div class="front c1">
@@ -81,7 +104,7 @@
                 </div>
             </div>
             <div class="div7 hidden">
-                <div class="flip-container fronted" 
+                <div id="card2" class="flip-container fronted" 
                 onclick="this.swapClasses('fronted,backed');">
                   <div class="flipper fli300">
                       <div class="front c1">
@@ -94,7 +117,7 @@
                 </div>
             </div>
             <div class="div8 hidden">
-                <div class="flip-container fronted" 
+                <div id="card3" class="flip-container fronted" 
                 onclick="this.swapClasses('fronted,backed');">
                   <div class="flipper fli300">
                       <div class="front c1">
@@ -107,7 +130,7 @@
                 </div>
             </div>
             <div class="div9 hidden">
-                <div class="flip-container fronted" 
+                <div id="card4" class="flip-container fronted" 
                 onclick="this.swapClasses('fronted,backed');">
                   <div class="flipper fli300">
                       <div class="front c1">
@@ -115,13 +138,14 @@
                       </div>
                       <div class="back c2">
                         <a href="welcome.html" target="_self">
-                            <img class="card-edge glow-tarot overlay" src="images/demon-card-back.png" width="150px" height="225px">
+                            <img class="card-edge glow-tarot overlay" src="images/magician-card-back.png" width="150px" height="225px">
                         </a>
                       </div>
                   </div>
                 </div>
             </div>
         </div>
+        <!-- End Fortune Teller -->
         <!-- Fade Script-->
           <script>
             document.addEventListener("DOMContentLoaded", () => {
